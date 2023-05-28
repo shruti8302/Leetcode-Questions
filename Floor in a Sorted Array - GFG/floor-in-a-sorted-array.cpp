@@ -11,10 +11,10 @@ class Solution{
     // x: element whose floor is to find
     int findFloor(vector<long long> v, long long n, long long x){
         
-        long long ans = 0;
+        long long ans = -1;
         long long si = 0;
         long long ei = n-1;
-        long long maxEl = -1;
+        // long long maxEl = -1;
         
         while(si <= ei){
             long long mid = si + (ei-si)/2;
@@ -22,13 +22,13 @@ class Solution{
                 return mid;
             }else if(v[mid] < x){
                 ans = mid;
-                maxEl = max(maxEl,ans);
+                //maxEl = max(maxEl,ans);
                 si = mid+1;
             }else{
                 ei = mid-1;
             }
         }
-        return maxEl;
+        return ans;
     }
 };
 
